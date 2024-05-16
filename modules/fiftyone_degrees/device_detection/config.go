@@ -16,8 +16,9 @@ type Config struct {
 }
 
 type DataFile struct {
-	Path   string         `json:"path"`
-	Update DataFileUpdate `json:"update"`
+	Path         string         `json:"path"`
+	Update       DataFileUpdate `json:"update"`
+	MakeTempCopy *bool          `json:"make_temp_copy"`
 }
 
 type DataFileUpdate struct {
@@ -26,6 +27,7 @@ type DataFileUpdate struct {
 	License         string `json:"license_key"`
 	PollingInterval int    `json:"polling_interval"`
 	Product         string `json:"product"`
+	WatchFileSystem *bool  `json:"watch_file_system"`
 }
 
 type AccountFilter struct {

@@ -51,6 +51,13 @@ func buildEngineOptions(moduleConfig *Config) []onpremise.EngineOptions {
 		onpremise.WithDataFile(moduleConfig.DataFile.Path),
 	}
 
+	if moduleConfig.DataFile.MakeTempCopy != nil {
+		options = append(
+			options,
+			onpremise.WithTempDataCopy(*moduleConfig.DataFile.MakeTempCopy),
+		)
+	}
+
 	if moduleConfig.DataFile.Update.Auto {
 		dataUpdateOptions := []onpremise.EngineOptions{}
 
@@ -59,6 +66,14 @@ func buildEngineOptions(moduleConfig *Config) []onpremise.EngineOptions {
 				dataUpdateOptions,
 				onpremise.WithDataUpdateUrl(
 					moduleConfig.DataFile.Update.Url,
+				),
+			)
+		}
+
+		if moduleConfig.DataFile.Update.PollingInterval > 0 {
+			dataUpdateOptions = append(
+				dataUpdateOptions,
+				onpremise.WithPollingInterval(
 					moduleConfig.DataFile.Update.PollingInterval,
 				),
 			)
@@ -67,21 +82,23 @@ func buildEngineOptions(moduleConfig *Config) []onpremise.EngineOptions {
 		if moduleConfig.DataFile.Update.License != "" {
 			dataUpdateOptions = append(
 				dataUpdateOptions,
-				onpremise.SetLicenceKey(moduleConfig.DataFile.Update.License),
+				onpremise.WithLicenceKey(moduleConfig.DataFile.Update.License),
 			)
 		}
 
 		if moduleConfig.DataFile.Update.Product != "" {
 			dataUpdateOptions = append(
 				dataUpdateOptions,
-				onpremise.SetProduct(moduleConfig.DataFile.Update.Product),
+				onpremise.WithProduct(moduleConfig.DataFile.Update.Product),
 			)
 		}
 
-		if moduleConfig.DataFile.Update.PollingInterval > 0 {
+		if moduleConfig.DataFile.Update.WatchFileSystem != nil {
 			dataUpdateOptions = append(
 				dataUpdateOptions,
-				onpremise.SetPollingInterval(moduleConfig.DataFile.Update.PollingInterval),
+				onpremise.WithFileWatch(
+					*moduleConfig.DataFile.Update.WatchFileSystem,
+				),
 			)
 		}
 
