@@ -82,7 +82,7 @@ func buildEngineOptions(moduleConfig *Config) []onpremise.EngineOptions {
 		if moduleConfig.DataFile.Update.License != "" {
 			dataUpdateOptions = append(
 				dataUpdateOptions,
-				onpremise.WithLicenceKey(moduleConfig.DataFile.Update.License),
+				onpremise.WithLicenseKey(moduleConfig.DataFile.Update.License),
 			)
 		}
 
