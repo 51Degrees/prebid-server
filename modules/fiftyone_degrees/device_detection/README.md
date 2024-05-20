@@ -125,7 +125,7 @@ Minimal sample (only required):
 
 ``data-file``
 * ``path`` - (string, REQUIRED) - The full path to the device detection data file. Lite data file can be downloaded from [data repo on GitHub].
-* ``make_temp_copy`` - (boolean) - If true, the engine will create a temporary copy of the data file rather than using the data file directly. Defaults to false.
+* ``make_temp_copy`` - (boolean) - If true, the engine will create a temporary copy of the data file rather than using the data file directly. Should be false only for `InMemory` performance profile. Defaults to true.
 
 * ``update``
    * ``auto`` - (boolean) - Enable/Disable auto update. Defaults to enabled. If enabled, the auto update system will automatically download and apply new data files for device detection.
