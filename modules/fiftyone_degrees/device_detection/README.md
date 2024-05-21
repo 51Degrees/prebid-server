@@ -136,7 +136,7 @@ Minimal sample (only required):
    * ``polling-interval`` - (int, seconds) - Set the time between checks for a new data file made by the DataUpdateService in seconds. Default = 30 minutes.
 
 ``performance``
-* ``profile`` - (string) - Set the performance profile for the device detection engine. Must be one of: LowMemory, MaxPerformance, HighPerformance, Balanced, BalancedTemp. Defaults to Balanced.
+* ``profile`` - (string) - Set the performance profile for the device detection engine. Must be one of: `LowMemory`, `MaxPerformance`, `HighPerformance`, `Balanced`, `BalancedTemp`, `InMemory`. Defaults to `Balanced`.
 * `concurrency` - _(int)_ - Set the expected number of concurrent operations using the engine. This sets the concurrency of the internal caches to avoid excessive locking. Default: 10.
 * `difference` - _(int)_ - Set the maximum difference to allow when processing HTTP headers. The meaning of difference depends on the Device Detection API being used. The difference is the difference in hash value between the hash that was found, and the hash that is being searched for. By default this is 0. For more information see [51Degrees documentation](https://51degrees.com/documentation/_device_detection__hash.html).
 * `allow-unmatched` - _(boolean)_ - If set to false, a non-matching User-Agent will result in properties without set values.
