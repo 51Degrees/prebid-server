@@ -58,55 +58,58 @@ func buildEngineOptions(moduleConfig *Config) []onpremise.EngineOptions {
 		)
 	}
 
-	if moduleConfig.DataFile.Update.Auto {
-		dataUpdateOptions := []onpremise.EngineOptions{}
+	dataUpdateOptions := []onpremise.EngineOptions{}
 
-		if moduleConfig.DataFile.Update.Url != "" {
-			dataUpdateOptions = append(
-				dataUpdateOptions,
-				onpremise.WithDataUpdateUrl(
-					moduleConfig.DataFile.Update.Url,
-				),
-			)
-		}
+	dataUpdateOptions = append(
+		dataUpdateOptions,
+		onpremise.WithAutoUpdate(moduleConfig.DataFile.Update.Auto),
+	)
 
-		if moduleConfig.DataFile.Update.PollingInterval > 0 {
-			dataUpdateOptions = append(
-				dataUpdateOptions,
-				onpremise.WithPollingInterval(
-					moduleConfig.DataFile.Update.PollingInterval,
-				),
-			)
-		}
-
-		if moduleConfig.DataFile.Update.License != "" {
-			dataUpdateOptions = append(
-				dataUpdateOptions,
-				onpremise.WithLicenseKey(moduleConfig.DataFile.Update.License),
-			)
-		}
-
-		if moduleConfig.DataFile.Update.Product != "" {
-			dataUpdateOptions = append(
-				dataUpdateOptions,
-				onpremise.WithProduct(moduleConfig.DataFile.Update.Product),
-			)
-		}
-
-		if moduleConfig.DataFile.Update.WatchFileSystem != nil {
-			dataUpdateOptions = append(
-				dataUpdateOptions,
-				onpremise.WithFileWatch(
-					*moduleConfig.DataFile.Update.WatchFileSystem,
-				),
-			)
-		}
-
-		options = append(
-			options,
-			dataUpdateOptions...,
+	if moduleConfig.DataFile.Update.Url != "" {
+		dataUpdateOptions = append(
+			dataUpdateOptions,
+			onpremise.WithDataUpdateUrl(
+				moduleConfig.DataFile.Update.Url,
+			),
 		)
 	}
+
+	if moduleConfig.DataFile.Update.PollingInterval > 0 {
+		dataUpdateOptions = append(
+			dataUpdateOptions,
+			onpremise.WithPollingInterval(
+				moduleConfig.DataFile.Update.PollingInterval,
+			),
+		)
+	}
+
+	if moduleConfig.DataFile.Update.License != "" {
+		dataUpdateOptions = append(
+			dataUpdateOptions,
+			onpremise.WithLicenseKey(moduleConfig.DataFile.Update.License),
+		)
+	}
+
+	if moduleConfig.DataFile.Update.Product != "" {
+		dataUpdateOptions = append(
+			dataUpdateOptions,
+			onpremise.WithProduct(moduleConfig.DataFile.Update.Product),
+		)
+	}
+
+	if moduleConfig.DataFile.Update.WatchFileSystem != nil {
+		dataUpdateOptions = append(
+			dataUpdateOptions,
+			onpremise.WithFileWatch(
+				*moduleConfig.DataFile.Update.WatchFileSystem,
+			),
+		)
+	}
+
+	options = append(
+		options,
+		dataUpdateOptions...,
+	)
 
 	return options
 }
