@@ -53,6 +53,10 @@ github.com/51Degrees/device-detection-go/v4 v4.4.26 h1:JdCorCRom0kHE16VfESgVC5D3
 github.com/51Degrees/device-detection-go/v4 v4.4.26/go.mod h1:mtkaY2l1/L37zfyvSndU1opy0rL3+26lB7BBLi6z5LI=
 github.com/51Degrees/device-detection-go/v4 v4.4.32 h1:kGLAhxDsLNqQep5RmSP6gWuG7jBxBqIy8UTOwvZdiDo=
 github.com/51Degrees/device-detection-go/v4 v4.4.32/go.mod h1:mtkaY2l1/L37zfyvSndU1opy0rL3+26lB7BBLi6z5LI=
+github.com/51Degrees/device-detection-go/v4 v4.4.33 h1:sJyoZOoaXAm+vSIi1Rw2qWTWpFAZ+SDC3Tsf3MGqx4A=
+github.com/51Degrees/device-detection-go/v4 v4.4.33/go.mod h1:mtkaY2l1/L37zfyvSndU1opy0rL3+26lB7BBLi6z5LI=
+github.com/51Degrees/device-detection-go/v4 v4.4.34 h1:fZjLUutRc2oSV9l7Ob3XUiHUOB3TH/F2WP1Zm8+T3xE=
+github.com/51Degrees/device-detection-go/v4 v4.4.34/go.mod h1:mtkaY2l1/L37zfyvSndU1opy0rL3+26lB7BBLi6z5LI=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/DATA-DOG/go-sqlmock v1.5.0 h1:Shsta01QNfFxHCfpW6YH2STWB0MudeXXEWMr20OEh60=

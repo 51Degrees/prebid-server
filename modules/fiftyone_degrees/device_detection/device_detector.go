@@ -25,12 +25,9 @@ func NewDeviceDetector(
 	cfg *dd.ConfigHash,
 	moduleConfig *Config,
 ) (*DeviceDetector, error) {
-	cfg.SetUseUpperPrefixHeaders(false)
-
-	engineOptions := buildEngineOptions(moduleConfig)
+	engineOptions := buildEngineOptions(moduleConfig, cfg)
 
 	ddEngine, err := onpremise.New(
-		cfg,
 		engineOptions...,
 	)
 	if err != nil {
@@ -46,10 +43,39 @@ func NewDeviceDetector(
 	return deviceDetector, nil
 }
 
-func buildEngineOptions(moduleConfig *Config) []onpremise.EngineOptions {
+func buildEngineOptions(moduleConfig *Config, configHash *dd.ConfigHash) []onpremise.EngineOptions {
 	options := []onpremise.EngineOptions{
 		onpremise.WithDataFile(moduleConfig.DataFile.Path),
 	}
+
+	options = append(
+		options,
+		onpremise.WithProperties([]string{"HardwareVendor",
+			"HardwareName",
+			"DeviceType",
+			"PlatformVendor",
+			"PlatformName",
+			"PlatformVersion",
+			"BrowserVendor",
+			"BrowserName",
+			"BrowserVersion",
+			"ScreenPixelsWidth",
+			"ScreenPixelsHeight",
+			"PixelRatio",
+			"Javascript",
+			"GeoLocation",
+			"HardwareModel",
+			"HardwareFamily",
+			"HardwareModelVariants",
+			"ScreenInchesHeight",
+			"IsCrawler",
+		}),
+	)
+
+	options = append(
+		options,
+		onpremise.WithConfigHash(configHash),
+	)
 
 	if moduleConfig.DataFile.MakeTempCopy != nil {
 		options = append(

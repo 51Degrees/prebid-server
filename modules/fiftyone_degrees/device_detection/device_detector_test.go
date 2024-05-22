@@ -36,7 +36,8 @@ func TestBuildEngineOptions(t *testing.T) {
 					"drift": 1	
 				  }
 }`),
-			length: 6, // data_file.path + data_file.update.auto:true + url, polling_interval, license_key, product
+			length: 8,
+			// data_file.path, data_file.update.auto:true, url, polling_interval, license_key, product, confighash, properties
 		},
 		{
 			cfgRaw: []byte(`{ 
@@ -53,15 +54,15 @@ func TestBuildEngineOptions(t *testing.T) {
 					"drift": 1	
 				  }
 }`),
-			length: 2, // data_file.update.auto:false + data_file.path
+			length: 4, // data_file.update.auto:false, data_file.path, confighash, properties
 		},
 	}
 
 	for _, c := range cases {
 		cfg, err := ParseConfig(c.cfgRaw)
 		assert.NoError(t, err)
-
-		options := buildEngineOptions(&cfg)
+		configHash := configHashFromConfig(&cfg)
+		options := buildEngineOptions(&cfg, configHash)
 		assert.Equal(t, c.length, len(options))
 	}
 }
