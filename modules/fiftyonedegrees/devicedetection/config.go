@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/51Degrees/device-detection-go/v4/dd"
+	"github.com/51Degrees/51degrees-go/device-detection/v4/dd"
 	"github.com/prebid/prebid-server/v4/util/jsonutil"
 )
 
