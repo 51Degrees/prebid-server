@@ -49,8 +49,10 @@ cloud.google.com/go/storage v1.8.0/go.mod h1:Wv1Oy7z6Yz3DshWRJFhqM/UCfaWIRTdp0RX
 cloud.google.com/go/storage v1.10.0/go.mod h1:FLPqc6j+Ki4BU591ie1oL6qBQGu2Bl/tZ9ullr3+Kg0=
 cloud.google.com/go/storage v1.14.0/go.mod h1:GrKmX003DSIwi9o29oFT7YDnHYwZoctc3fOKtUw0Xmo=
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
-github.com/51Degrees/device-detection-go/v4 v4.4.35 h1:qhP2tzoXhGE1aYY3NftMJ+ccxz0+2kM8aF4SH7fTyuA=
-github.com/51Degrees/device-detection-go/v4 v4.4.35/go.mod h1:dbdG1fySqdY+a5pUnZ0/G0eD03G6H3Vh8kRC+1f9qSc=
+github.com/51Degrees/51degrees-go/common/v4 v4.5.166 h1:XWuMUqCqefg/y1dlpTfxsARV+dff5I3TTMKQXBZud98=
+github.com/51Degrees/51degrees-go/common/v4 v4.5.166/go.mod h1:mikU9Ph3A/nNGHUBoPWJbE983WJsm51lPVlIMNANqVc=
+github.com/51Degrees/51degrees-go/device-detection/v4 v4.5.167 h1:Vyj6UVqCA2xcL//F80J45+MLBAGROUvdFMq+CYT9TP8=
+github.com/51Degrees/51degrees-go/device-detection/v4 v4.5.167/go.mod h1:g3HWNjRsqx12XTTivvW6Z8W22OXYB59xbKtO3Yyn6Ts=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/DATA-DOG/go-sqlmock v1.5.0 h1:Shsta01QNfFxHCfpW6YH2STWB0MudeXXEWMr20OEh60=

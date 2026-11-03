@@ -5,8 +5,8 @@ package devicedetection
 import (
 	"fmt"
 
-	"github.com/51Degrees/device-detection-go/v4/dd"
-	"github.com/51Degrees/device-detection-go/v4/onpremise"
+	"github.com/51Degrees/51degrees-go/device-detection/v4/dd"
+	"github.com/51Degrees/51degrees-go/device-detection/v4/onpremise"
 )
 
 type engine interface {

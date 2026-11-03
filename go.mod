@@ -3,7 +3,7 @@ module github.com/prebid/prebid-server/v4
 go 1.25.0
 
 require (
-	github.com/51Degrees/device-detection-go/v4 v4.4.35
+	github.com/51Degrees/51degrees-go/device-detection/v4 v4.5.167
 	github.com/DATA-DOG/go-sqlmock v1.5.0
 	github.com/IABTechLab/adscert v0.34.0
 	github.com/NYTimes/gziphandler v1.1.1
@@ -50,6 +50,7 @@ require (
 )
 
 require (
+	github.com/51Degrees/51degrees-go/common/v4 v4.5.166 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
